@@ -57,12 +57,12 @@ function handleClick(clicked) {
 
 function promptReset() {
     buttonsRow.classList.remove("active");
-    resetButton.classList.add("active");
+    resetDiv.classList.add("active");
 }
 
 function resetGame() {
     buttonsRow.classList.add("active");
-    resetButton.classList.remove("active");
+    resetDiv.classList.remove("active");
     gamestate.round = 0;
     gamestate.playerWins = 0;
     gamestate.computerWins = 0;
@@ -98,7 +98,8 @@ let resultNode = document.querySelector("#result");
 let rockButton = document.querySelector("#rock");
 let paperButton = document.querySelector("#paper");
 let scissorsButton = document.querySelector("#scissors");
-let resetButton = document.querySelector(".reset");
+let resetDiv = document.querySelector(".reset");
+let resetButton = document.querySelector("#resetButton");
 let buttonsRow = document.querySelector(".buttons");
 let computerP = document.querySelector("#computer");
 let playerP = document.querySelector("#player");
