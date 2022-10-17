@@ -1,0 +1,52 @@
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: black;
+    background-color: whitesmoke;
+    padding: 0;
+    margin: 0;
+    justify-content: space-between;
+}
+
+header, footer {
+    flex-basis: 0;
+    padding: 12px;
+    text-align: center;
+}
+header {
+    background-color: #bbeeee;
+    margin: 0;
+    font-weight: bold;
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+main {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttons,
+.reset {
+    flex: 1;
+    display: none;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 12px;
+}
+.buttons.active {
+    display: flex;
+}
+button {
+    padding: 12px;
+}
+.reset.active {
+    display: flex;
+}
+
+p {
+    text-transform: capitalize;
+}
