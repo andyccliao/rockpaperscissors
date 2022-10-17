@@ -18,6 +18,7 @@ function getComputerChoice() {
  * @returns -1 if player lost, 1 if player won, 0 if tie
  */
 function playRound(playerSelection, computerSelection) {
+    //Tie
     if(playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
         return 0;
     }
@@ -30,6 +31,7 @@ function playRound(playerSelection, computerSelection) {
         gamestate.playerWins += 1;
         return 1;
     }
+    // COmputer Wins
     if(playerSelection.toLowerCase() === 'rock' && computerSelection === choices[1]
       || playerSelection.toLowerCase() === 'paper' && computerSelection === choices[2]
       || playerSelection.toLowerCase() === 'scissors' && computerSelection === choices[0]
@@ -74,9 +76,9 @@ function isGameOver() {
 
 function updateDisplay(gameResult, playerSelection, computerSelection) {
     computerP.textContent = computerSelection;
-    youP.textContent = playerSelection;
+    playerP.textContent = playerSelection;
     computerScore.textContent = gamestate.computerWins;
-    youScore.textContent = gamestate.playerWins;
+    playerScore.textContent = gamestate.playerWins;
     if (gameResult === -1) {
         resultSpan.textContent = `You Lose! ${capitalize(playerSelection)} loses to ${computerSelection}`;
     }
@@ -87,6 +89,7 @@ function updateDisplay(gameResult, playerSelection, computerSelection) {
         resultSpan.textContent = `Tie! ${computerSelection} ties with ${computerSelection}`;
     }
     else {
+        // Default, used for reset
         resultSpan.textContent = "Best 3 out of 5, choose a button to start.";
     }
 }
@@ -98,10 +101,10 @@ let scissorsButton = document.querySelector("#scissors");
 let resetButton = document.querySelector(".reset");
 let buttonsRow = document.querySelector(".buttons");
 let computerP = document.querySelector("#computer");
-let youP = document.querySelector("#you");
+let playerP = document.querySelector("#player");
 let resultSpan = document.querySelector("#result");
 let computerScore = document.querySelector("#computerScore");
-let youScore = document.querySelector("#youScore");
+let playerScore = document.querySelector("#playerScore");
 
 let gamestate = {
     round : 0,
